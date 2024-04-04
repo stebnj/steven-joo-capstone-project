@@ -101,7 +101,17 @@ List the pages of your app with brief descriptions. You can show this visually, 
 
 ### Mockups
 
-Provide visuals of your app's screens. You can use tools like Figma or pictures of hand-drawn sketches.
+![](./client/src/assets/mockups/nest-home-page.png)
+
+![](./client/src/assets/mockups/listings-details-page.png)
+
+![](./client/src/assets/mockups/fIlter-modal.png)
+
+![](./client/src/assets/mockups/user-profile.png)
+
+![](./client/src/assets/mockups/login-page.png)
+
+![](./client/src/assets/mockups/signup-page.png)
 
 ### Data
 
