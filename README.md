@@ -221,7 +221,7 @@ Day 5-8: Backend Development
 Week 2: Frontend Development and Initial Testing:
 
 Day 9-11: Frontend Development
-    - initiate frontend development with React and TypeScript
+    - initiate frontend development with React 
     - Build interfaces for Home, Search Results, and Property Details pages
     - Integrate frontend with backend APIs for dynamic data display
 
