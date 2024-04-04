@@ -83,6 +83,9 @@ Limitations to consider:
 
 3. https://developers.google.com/maps/documentation/routes?_gl=1*v0yiwt*_up*MQ..*_ga*NjczNTgxMzAwLjE3MTIxMDk2Mzg.*_ga_NRWSTWS78N*MTcxMjEwOTYzOC4xLjAuMTcxMjEwOTYzOC4wLjAuMA..
 
+4. https://docs.mapbox.com/mapbox-gl-js/guides/
+
+5. https://docs.mapbox.com/api/navigation/directions/
 ### Sitemap
 
 List the pages of your app with brief descriptions. You can show this visually, or write it out.
