@@ -262,3 +262,11 @@ Security Considerations:
     Password Storage: Use strong hashing algorithms like bcrypt to store passwords securely.
     Session Management: Implement token expiration and renewal policies to manage session lifetime.
     Input Validation: To prevent injection attacks, validate all user inputs both on the client and server sides.
+
+1. endpoints for the backend -figure out 
+
+2. what function for the filter 
+
+3. how to determine the different matches (color coded)
+
+4. 
