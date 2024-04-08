@@ -83,6 +83,9 @@ Limitations to consider:
 
 3. https://developers.google.com/maps/documentation/routes?_gl=1*v0yiwt*_up*MQ..*_ga*NjczNTgxMzAwLjE3MTIxMDk2Mzg.*_ga_NRWSTWS78N*MTcxMjEwOTYzOC4xLjAuMTcxMjEwOTYzOC4wLjAuMA..
 
+4. https://docs.mapbox.com/mapbox-gl-js/guides/
+
+5. https://docs.mapbox.com/api/navigation/directions/
 ### Sitemap
 
 List the pages of your app with brief descriptions. You can show this visually, or write it out.
@@ -101,7 +104,17 @@ List the pages of your app with brief descriptions. You can show this visually, 
 
 ### Mockups
 
-Provide visuals of your app's screens. You can use tools like Figma or pictures of hand-drawn sketches.
+![](./client/src/assets/mockups/nest-home-page.png)
+
+![](./client/src/assets/mockups/listings-details-page.png)
+
+![](./client/src/assets/mockups/fIlter-modal.png)
+
+![](./client/src/assets/mockups/user-profile.png)
+
+![](./client/src/assets/mockups/login-page.png)
+
+![](./client/src/assets/mockups/signup-page.png)
 
 ### Data
 
@@ -249,3 +262,11 @@ Security Considerations:
     Password Storage: Use strong hashing algorithms like bcrypt to store passwords securely.
     Session Management: Implement token expiration and renewal policies to manage session lifetime.
     Input Validation: To prevent injection attacks, validate all user inputs both on the client and server sides.
+
+1. endpoints for the backend -figure out 
+
+2. what function for the filter 
+
+3. how to determine the different matches (color coded)
+
+4. 
