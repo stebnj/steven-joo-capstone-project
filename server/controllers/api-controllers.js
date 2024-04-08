@@ -33,5 +33,5 @@ const getProperty = async (req, res) => {
 
 module.exports = {
     index,
-    getProperty
+    getProperty,
 }
