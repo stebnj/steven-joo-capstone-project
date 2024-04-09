@@ -1,19 +1,19 @@
 module.exports = [
           {
-            
-            "name": "Private bedroom in 3 bed/1 bath Home",
-            "bed_range": "3 Beds",
-            "rent_range": 1575.00,
+                    
+            "name": "Harvard University",
+            "bed_range": "",
+            "rent_range": 0,
             "address": {
               "country": "US",
-              "line_one": "31 Craigie St",
-              "line_two": "Somerville, MA 02143",
-              "city": "Somerville",
+              "line_one": "Massachusetts Hall",
+              "line_two": "Cambridge, MA 02138",
+              "city": "Cambridge",
               "state": "MA",
-              "postal_code": "02143",
-              "latitude": 42.3863052,
-              "longitude": -71.1118813,
-              "full_address": "31 Craigie St, Somerville, MA 02143"
+              "postal_code": "02138",
+              "latitude": 42.374443,
+              "longitude": -71.116943,
+              "full_address": "Massachusetts Hall, Cambridge, MA 02138"
             }
           },
           {
