@@ -1,3 +1,25 @@
 @use '../../styles/partials/global';
 @import '../../styles/partials/variables';
 @import '../../styles/partials/mixins';
+
+
+.nav-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+
+    &__lists{
+        display: flex;
+    }
+
+    &__item{
+        padding-right: 1rem;
+    }
+
+    &__right-container{
+        display: flex;
+        flex-direction: row;
+    }
+
+}

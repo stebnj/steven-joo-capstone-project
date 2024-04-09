@@ -14,7 +14,7 @@ export default function Header() {
           </Link>
         </section>
         <section className='nav-bar__lists-container'>
-          <ul>
+          <ul className='nav-bar__lists'>
             <Link className='nav-bar__link'>
               <li className='nav-bar__item'>
                 Home
