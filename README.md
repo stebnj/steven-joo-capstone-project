@@ -269,4 +269,10 @@ Security Considerations:
 
 3. how to determine the different matches (color coded)
 
-4. 
+
+
+1. input school
+
+2. put in preferences
+
+3. list out listings based on preferences color coded
