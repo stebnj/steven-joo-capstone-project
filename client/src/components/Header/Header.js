@@ -9,13 +9,13 @@ export default function Header() {
     <header className='header'> 
       <nav className='nav-bar'> 
         <section className='nav-bar__heading-container'>
-          <Link className='nav-bar__link'>
+          <Link to="/" className='nav-bar__link'>
             <h1 className='nav-bar__heading'>NEST</h1>
           </Link>
         </section>
         <section className='nav-bar__lists-container'>
           <ul className='nav-bar__lists'>
-            <Link className='nav-bar__link'>
+            <Link to="/" className='nav-bar__link'>
               <li className='nav-bar__item'>
                 Home
               </li>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 export default function ListingsList() {
     const [listings, setListingss] = useState([])
@@ -31,7 +32,11 @@ export default function ListingsList() {
         {isLoading && <p>Loading...</p>}
         <ul>
             {listings.map((listing) => (
-                <li key={listing.id}>{listing.name}</li>
+                <li key={listing.id}>
+                    <Link to={`/listings/${listing.id}`}>
+                        {listing.name}
+                    </Link>
+                </li>
             ))}
         </ul>
     </div>
