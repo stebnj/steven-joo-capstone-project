@@ -17,6 +17,7 @@ export default function ListingDetails() {
             setListing(response.data);
         } catch (error) {
             console.error(`Error fetching listing details:`, error);
+            setError("Failed to load listing details")
         } finally {
             setIsLoading(false)
         }
@@ -41,7 +42,7 @@ export default function ListingDetails() {
                 <p>Address: {listing.address.full_address}</p>
             </div>
         ) : (
-            <p>Loading...</p>
+            !error && <p>Loading...</p>
         )}
     </div>
   )
