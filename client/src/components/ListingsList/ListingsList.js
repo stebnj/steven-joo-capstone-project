@@ -1,72 +1,72 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import FilterModal from '../FilterModal/FilterModal'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 
 export default function ListingsList() {
-    const initialSearchTerm = ''
     const [listings, setListings] = useState([])
     const [error, setError] = useState('')
-   
+    const [schoolName, setSchoolName] = useState('')
     const [loading, setLoading] = useState(false);
-    const [searchTerm, setSearchTerm] = useState(initialSearchTerm)
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [filters, setFilters] = useState({})
 
-    
+    const handleSearch = (event) => {
+        event.preventDefault();
+        getListings();
+    };
 
-    const handleSearch = async (e) => {
-        
+    const handleApplyFilters = (newFilters) => {
+        console.log('Applying filters:', newFilters);
+        setFilters(newFilters);
+        setIsModalOpen(false);
+        getListings();
+    };
 
+
+    const getListings = async () => {
+        console.log('Fetching listings with filters:', filters);
         setLoading(true);
         setError('')
         setListings([])
 
-        const school = searchTerm.trim().toLowerCase().replace(/\s+/g, '-')
-
         try {
-            const response = await axios.get(`http://localhost:8080/listings`, {params: filters})
+            const response = await axios.get(`http://localhost:8080/listings/near-${schoolName}`, {
+                params: filters
+            })
             setListings(response.data)
         } catch (err) {
             console.error('Error fetching listings:', err);
-            setError('Failed to load listings for ' + searchTerm);
+            setError(`Failed to load listings for ${schoolName}`);
         } finally {
             setLoading(false);
-            setSearchTerm(initialSearchTerm);
         }
     }
 
-    const openModal = () => setIsModalOpen(true)
-    const closeModal = () => setIsModalOpen(false);
-
-    const applyFilters = (newFilters) => {
-        setFilters(newFilters);
-        handleSearch();
-        closeModal();
-    };
 
 
 
   return (
     <div>
-         <input
-        type="text"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        placeholder="Enter Your University"
+        <form onSubmit={handleSearch}>
+            <input
+                type="text"
+                value={schoolName}
+                onChange={(e) => setSchoolName(e.target.value)}
+                placeholder="Enter a university"
             />
-        <button onClick={handleSearch}>Search</button>
-
+            <button type="submit">Search</button>
+            <button type="button" onClick={() => setIsModalOpen(true)}>Filter</button>
+        </form>
         {loading && <p>Loading...</p>}
         {error && <p className="error">{error}</p>}
         <div>
-        <button onClick={openModal}>Filter</button>
            <FilterModal
             isOpen={isModalOpen}
-            onClose={closeModal}
-            onApplyFilters={applyFilters}
+            onClose={() => setIsModalOpen(false)}
+            onApplyFilters={handleApplyFilters}
             />    
         </div>
      

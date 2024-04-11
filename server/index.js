@@ -14,7 +14,7 @@ app.use(cors());
 
 app.use(express.json());
 
-app.get('/listings/near-harvard', async (req, res) => {
+app.get('/listings/near-harvard', async (_req, res) => {
     try {
         const listings = await knex('nest_tables')
             .whereRaw(`
@@ -39,22 +39,23 @@ app.get('/listings/near-harvard', async (req, res) => {
     }
 });
 
-app.get('/listings', async (req, res) => {
+app.get('/listings/near-:schoolName', async (req, res) => {
     const { minRent, maxRent, bedRange } = req.query;
+    console.log('Received filters:', { minRent, maxRent, bedRange });
 
     try {
         let query = knex('nest_tables');
 
         if (minRent) {
-            query = query.where('rent_range', '>=', parseFloat(minRent));
+            query.where('rent_range', '>=', Number(minRent));
         }
 
         if (maxRent) {
-            query = query.where('rent_range', '<=', parseFloat(maxRent));
+            query.where('rent_range', '<=', Number(maxRent));
         }
 
         if (bedRange) {
-            query = query.where('bed_range', bedRange);
+            query.where('bed_range', bedRange);
         }
 
         const listings = await query;
