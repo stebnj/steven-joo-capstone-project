@@ -1,22 +1,5 @@
 module.exports = [
           {
-                    
-            "name": "Harvard University",
-            "bed_range": "",
-            "rent_range": 0,
-            "address": {
-              "country": "US",
-              "line_one": "Massachusetts Hall",
-              "line_two": "Cambridge, MA 02138",
-              "city": "Cambridge",
-              "state": "MA",
-              "postal_code": "02138",
-              "latitude": 42.374443,
-              "longitude": -71.116943,
-              "full_address": "Massachusetts Hall, Cambridge, MA 02138"
-            }
-          },
-          {
         
             "name": "357 Windsor St",
             "bed_range": "1 Bed",
