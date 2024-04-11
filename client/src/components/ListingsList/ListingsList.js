@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import FilterModal from '../FilterModal/FilterModal'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
@@ -8,12 +9,16 @@ export default function ListingsList() {
     const initialSearchTerm = ''
     const [listings, setListings] = useState([])
     const [error, setError] = useState('')
-    const [isLoading, setIsLoading] = useState(false)
+   
     const [loading, setLoading] = useState(false);
     const [searchTerm, setSearchTerm] = useState(initialSearchTerm)
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const [filters, setFilters] = useState({})
+
+    
 
     const handleSearch = async (e) => {
-        e.preventDefault()
+        
 
         setLoading(true);
         setError('')
@@ -22,7 +27,7 @@ export default function ListingsList() {
         const school = searchTerm.trim().toLowerCase().replace(/\s+/g, '-')
 
         try {
-            const response = await axios.get(`http://localhost:8080/listings/near-${school}`)
+            const response = await axios.get(`http://localhost:8080/listings`, {params: filters})
             setListings(response.data)
         } catch (err) {
             console.error('Error fetching listings:', err);
@@ -32,6 +37,15 @@ export default function ListingsList() {
             setSearchTerm(initialSearchTerm);
         }
     }
+
+    const openModal = () => setIsModalOpen(true)
+    const closeModal = () => setIsModalOpen(false);
+
+    const applyFilters = (newFilters) => {
+        setFilters(newFilters);
+        handleSearch();
+        closeModal();
+    };
 
 
 
@@ -47,6 +61,16 @@ export default function ListingsList() {
 
         {loading && <p>Loading...</p>}
         {error && <p className="error">{error}</p>}
+        <div>
+        <button onClick={openModal}>Filter</button>
+           <FilterModal
+            isOpen={isModalOpen}
+            onClose={closeModal}
+            onApplyFilters={applyFilters}
+            />    
+        </div>
+     
+        
         <ul>
             {listings.map((listing) => (
                 <li key={listing.id}>

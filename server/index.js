@@ -39,6 +39,32 @@ app.get('/listings/near-harvard', async (req, res) => {
     }
 });
 
+app.get('/listings', async (req, res) => {
+    const { minRent, maxRent, bedRange } = req.query;
+
+    try {
+        let query = knex('nest_tables');
+
+        if (minRent) {
+            query = query.where('rent_range', '>=', parseFloat(minRent));
+        }
+
+        if (maxRent) {
+            query = query.where('rent_range', '<=', parseFloat(maxRent));
+        }
+
+        if (bedRange) {
+            query = query.where('bed_range', bedRange);
+        }
+
+        const listings = await query;
+        res.json(listings);
+    } catch (error) {
+        console.error('Error fetching listings:', error);
+        res.status(500).send('Failed to fetch listings');
+    }
+});
+
 app.use('/listings', apiRoutes);
 
 
