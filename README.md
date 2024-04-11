@@ -265,14 +265,4 @@ Security Considerations:
 
 1. endpoints for the backend -figure out 
 
-2. what function for the filter 
-
-3. how to determine the different matches (color coded)
-
-
-
-1. input school
-
-2. put in preferences
-
 3. list out listings based on preferences color coded

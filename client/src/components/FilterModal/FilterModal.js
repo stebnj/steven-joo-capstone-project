@@ -28,9 +28,9 @@ export default function FilterModal ({ isOpen, onClose, onApplyFilters }) {
                 <input name="maxRent" type="number" placeholder='Max Rent' />
                 <select name="bedRange">
                     <option value="">Any</option>
-                    <option value="1">1 Bed</option>
-                    <option value="2">2 Beds</option>
-                    <option value="3">3 Beds</option>
+                    <option value="1 Bed">1 Bed</option>
+                    <option value="2 Beds">2 Beds</option>
+                    <option value="3 Beds">3 Beds</option>
                 </select>
                 <button type="submit">Apply Filters</button>
                 <button type="button" onClick={onClose}>Close</button>
