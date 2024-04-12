@@ -4,6 +4,7 @@ import Home from './pages/Home/Home';
 import Login from './components/Login/Login';
 import Signup from './components/SIgnup/Signup';
 import Dashboard from './components/Dashboard/Dashboard';
+import UpdateProfile from './components/UpdateProfile/UpdateProfile';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import ListingDetails from './pages/ListingsDetails/ListingDetails';
@@ -23,6 +24,7 @@ function App() {
           <Route path="/listings/:id" element={<ListingDetails />}></Route>
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/login" element={<Login />}></Route>
+          <Route path="/update-profile" element={<PrivateRoute><UpdateProfile /></PrivateRoute>}></Route>
           <Route path="/forgot-password" element={<ForgotPassword />}></Route>
           <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>}></Route>
         </Routes>
