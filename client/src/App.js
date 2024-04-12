@@ -3,6 +3,7 @@ import Header from './components/Header/Header';
 import Home from './pages/Home/Home';
 import Login from './components/Login/Login';
 import Signup from './components/SIgnup/Signup';
+import Dashboard from './components/Dashboard/Dashboard';
 import ListingDetails from './pages/ListingsDetails/ListingDetails';
 import './App.scss';
 import { AuthProvider } from './contexts/AuthContext';
@@ -20,6 +21,7 @@ function App() {
           <Route path="/listings/:id" element={<ListingDetails />}></Route>
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/login" element={<Login />}></Route>
+          <Route path="/dashboard" element={<Dashboard />}></Route>
         </Routes>
       </BrowserRouter>  
     </AuthProvider>
