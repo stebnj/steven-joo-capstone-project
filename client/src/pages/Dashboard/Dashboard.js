@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useState } from 'react'
 import { useAuth } from '../../contexts/AuthContext'
 import { Link, useNavigate } from 'react-router-dom'
+import { db } from '../../firebase'
+import { collection, doc, getDocs } from 'firebase/firestore'
 
 
 export default function Dashboard() {
 const [error, setError] = useState('')
 const { currentUser, logout } = useAuth()
-
+const [savedListings, setSavedListings] = useState([]);
 const navigate = useNavigate()
 
 async function handleLogout() {
@@ -14,7 +16,6 @@ async function handleLogout() {
 
     try{
         await logout()
-        navigate('/')
     } catch {
         setError('Failed to log out')
     }

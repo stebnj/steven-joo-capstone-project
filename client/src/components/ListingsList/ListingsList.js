@@ -3,6 +3,9 @@ import { useState } from 'react'
 import FilterModal from '../FilterModal/FilterModal'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import { useAuth } from '../../contexts/AuthContext'
+import { db } from '../../firebase'
+import { doc, collection, setDoc } from 'firebase/firestore'
 
 
 
@@ -13,21 +16,40 @@ export default function ListingsList() {
     const [loading, setLoading] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [filters, setFilters] = useState({})
+
+    const { currentUser } = useAuth();
     
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => setIsModalOpen(false);
 
+    const saveListing = async(listing) => {
+        if (!currentUser) {
+            alert("Please log in to save listings")
+            return;
+        }
+
+        try{
+            const userRef = doc(db, "users", currentUser.uid);
+            const listingsCol = collection(userRef, "savedListings");
+            await setDoc(doc(listingsCol), listing);
+            alert("Listing saved successfully")
+        } catch (error) {
+            console.error("Error saving listing:", error);
+            alert("Failed to save listing")
+        }
+    }
+
 
 
     const handleApplyFilters = (newFilters) => {
-        console.log('Applying filters:', newFilters);
+        
         setFilters(newFilters);
         console.log(listings)
     };
 
 
     const getListings = async (filters) => {
-        console.log('Fetching listings with filters:', filters);
+        
         setLoading(true);
         setError('')
 
@@ -37,7 +59,7 @@ export default function ListingsList() {
             })
             setListings(response.data)
         } catch (err) {
-            console.error('Error fetching listings:', err);
+            
             setError(`Failed to load listings for ${schoolName}`);
         } finally {
             setLoading(false);
@@ -64,7 +86,6 @@ export default function ListingsList() {
     }
 
     useEffect(() => {
-        console.log(listings.length, listings)
         if(listings.length > 0){
             setListings(filterListings(filters))
         }
@@ -105,7 +126,9 @@ export default function ListingsList() {
                     <Link to={`/listings/${listing.id}`}>
                         {listing.name}
                     </Link>
+                    <button onClick={() => saveListing(listing)}>Save</button>
                 </li>
+                
             ))}
         </ul>
     </div>
