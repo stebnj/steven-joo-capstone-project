@@ -34,9 +34,9 @@ export default function Header() {
               src={profile} />
           </div>
           <div className='nav-bar__button-container'>
-            <Link to="/">
+            <Link to="/signup">
               <button className='nav-bar__button'>
-                  LOGIN
+                  SIGN UP
               </button>
             </Link>  
           </div>
