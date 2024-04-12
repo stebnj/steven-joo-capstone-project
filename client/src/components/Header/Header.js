@@ -29,9 +29,12 @@ export default function Header() {
         </section>
         <section className='nav-bar__right-container'>
           <div className='nav-bar__profile'>
-            <img
-              className='nav-bar__profile-img'
-              src={profile} />
+            <Link to="/dashboard">  
+              <img
+                className='nav-bar__profile-img'
+                src={profile} />
+            </Link>
+          
           </div>
           <div className='nav-bar__button-container'>
             <Link to="/signup">

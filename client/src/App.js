@@ -4,6 +4,8 @@ import Home from './pages/Home/Home';
 import Login from './components/Login/Login';
 import Signup from './components/SIgnup/Signup';
 import Dashboard from './components/Dashboard/Dashboard';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import ListingDetails from './pages/ListingsDetails/ListingDetails';
 import './App.scss';
 import { AuthProvider } from './contexts/AuthContext';
@@ -21,7 +23,8 @@ function App() {
           <Route path="/listings/:id" element={<ListingDetails />}></Route>
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/login" element={<Login />}></Route>
-          <Route path="/dashboard" element={<Dashboard />}></Route>
+          <Route path="/forgot-password" element={<ForgotPassword />}></Route>
+          <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>}></Route>
         </Routes>
       </BrowserRouter>  
     </AuthProvider>

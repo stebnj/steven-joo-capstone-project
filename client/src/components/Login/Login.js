@@ -35,7 +35,6 @@ export default function Login() {
             <h2>
                 Log In
             </h2>
-        
             {error}
         </section>
         <section>
@@ -57,6 +56,11 @@ export default function Login() {
         </section>
         <section>
             <p>Don't have an account?<Link to="/signup">Sign up</Link> </p>
+        </section>
+        <section>
+            <Link to="/forgot-password">
+                Forgot Password?
+            </Link>
         </section>
     </main>
   )
