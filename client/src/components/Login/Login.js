@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useRef } from 'react'
 import { useAuth } from '../../contexts/AuthContext'
+import { Link } from 'react-router-dom'
 
 export default function Login() {
     const emailRef = useRef()
@@ -29,7 +30,7 @@ export default function Login() {
     <main>
         <section>
             <h2>
-                SIGN UP
+                Log In
             </h2>
         
             {error}
@@ -48,11 +49,11 @@ export default function Login() {
                     </label>
                     <input type="password" ref={passwordRef} required/>    
                 </div>
-                <button disabled={loading} type="submit">Sign Up</button>
+                <button disabled={loading} type="submit">Log In</button>
             </form>
         </section>
         <section>
-            <p>Already have an account? Log in</p>
+            <p>Don't have an account?<Link to="/signup">Sign up</Link> </p>
         </section>
     </main>
   )

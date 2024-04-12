@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useRef } from 'react'
 import { useAuth } from '../../contexts/AuthContext'
+import { Link } from 'react-router-dom'
 
 export default function Signup() {
     const emailRef = useRef()
@@ -63,7 +64,7 @@ export default function Signup() {
             </form>
         </section>
         <section>
-            <p>Already have an account? Log in</p>
+            <p>Already have an account? <Link to="/login">Log in</Link> </p>
         </section>
     </main>
   )
