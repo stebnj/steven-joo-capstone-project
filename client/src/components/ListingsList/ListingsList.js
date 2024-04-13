@@ -151,4 +151,43 @@ export default function ListingsList() {
             <button onClick={resetFilters}>Reset Filters</button>
         </div>
     );
+ 
+
+
+  return (
+    <div>
+        <form onSubmit={handleSearch}>
+            <input
+                type="text"
+                value={schoolName}
+                onChange={(e) => setSchoolName(e.target.value)}
+                placeholder="Enter a university"
+            />
+            <button type="submit">Search</button>
+        </form> 
+        <button onClick={openModal}>
+            Filter
+        </button>
+        <FilterModal
+            isOpen={isModalOpen}
+            onClose={closeModal}
+            onApplyFilters={handleApplyFilters}
+        />    
+        
+        {loading && <p>Loading...</p>}
+        {error && <p className="error">{error}</p>}
+      
+        <ul>
+            {listings.map((listing) => (
+                <li key={listing.id}>
+                    <Link to={`/listings/${listing.id}`}>
+                        {listing.name}
+                    </Link>
+                    <button onClick={() => saveListing(listing)}>Save</button>
+                </li>
+                
+            ))}
+        </ul>
+    </div>
+  )
 }
