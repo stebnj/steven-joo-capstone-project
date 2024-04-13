@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { useAuth } from '../../contexts/AuthContext'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { db } from '../../firebase'
-import { collection, doc, getDocs } from 'firebase/firestore'
+import { collection, doc, getDocs, deleteDoc } from 'firebase/firestore'
 
 
 export default function Dashboard() {
 const [error, setError] = useState('')
 const { currentUser, logout } = useAuth()
 const [savedListings, setSavedListings] = useState([]);
-const navigate = useNavigate()
+
 
 
 useEffect(() => {
@@ -20,10 +20,18 @@ useEffect(() => {
         }
 
         const listingsRef = collection(doc(db, "users", currentUser.uid), "savedListings");
+
         try {
             const snapshot = await getDocs(listingsRef);
-            const listings = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+           
+            const listings = snapshot.docs.map(doc =>{ const {id, ...otherData } = doc.data(); return ({ id: `${doc.id}`, ...otherData })});
+            // const listings = snapshot.docs.map(doc => ({
+            //     docId:doc.id, ...doc.data()
+            // }))
+            console.log(listings)
+     
             setSavedListings(listings);
+            
         } catch (err) {
             console.error("Error fetching saved listings:", err);
             setError("Failed to fetch saved listings.");
@@ -32,6 +40,31 @@ useEffect(() => {
 
     fetchSavedListings();
 }, [currentUser]);
+
+
+const removeListing = async (listingId) => {
+    console.log(listingId)
+    
+
+    if (!currentUser) {
+        alert('You must be logged in to remove listings.');
+        return;
+    }
+    
+    
+    try {
+        const listingDocRef = doc(db, "users", currentUser.uid, "savedListings", listingId)
+        await deleteDoc(listingDocRef);
+        setSavedListings(savedListings.filter(listing => listing.id !== listingId)); 
+        console.log(savedListings)
+        alert("Listing removed successfully!");
+    } catch (error) {
+        console.error("Error removing listing:", error);
+        alert("Failed to remove listing.");
+    }
+};
+
+
 
 async function handleLogout() {
     setError('')
@@ -69,6 +102,7 @@ async function handleLogout() {
                                 <Link to={`/listings/${listing.id}`}>
                                     {listing.name}
                                 </Link>
+                                <button onClick={() => removeListing(listing.id)}>Remove</button>
                             </li>
                         ))}
                     </ul>
