@@ -22,6 +22,8 @@ export default function ListingsList() {
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => setIsModalOpen(false);
 
+  
+
     const saveListing = async(listing) => {
         if (!currentUser) {
             alert("Please log in to save listings")
@@ -37,6 +39,32 @@ export default function ListingsList() {
             console.error("Error saving listing:", error);
             alert("Failed to save listing")
         }
+    }   
+    
+    const colorCodeListings = (listings, filters) => {
+        const scoredListings = listings.map(listing => {
+            let score = 0;
+
+            if(filters.minRent && listing.rent_range >= filters.minRent) {
+                score += 1;
+            }
+
+            if (filters.maxRent && listing.rent_range <= filters.maxRent) {
+                score += 1;
+            }
+
+            if (filters.bedRange ** filters.bedRange !== "Any" && listing.bed_range === filters.bedRange) {
+                score += 1;
+            }
+
+            const maxScore = 3;
+
+        const color = score >= maxScore * 0.67 ? 'green' :
+                score >= maxScore * 0.33 ? 'yellow' : 'red';
+
+                return{...listing, color}
+        });
+        return scoredListings;
     }
 
 
@@ -95,6 +123,8 @@ export default function ListingsList() {
         event.preventDefault();
         getListings();
     };
+
+ 
 
 
   return (
