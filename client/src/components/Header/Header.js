@@ -20,9 +20,9 @@ export default function Header() {
                 Home
               </li>
             </Link>
-            <Link className='nav-bar__link'>
+            <Link to="/dashboard" className='nav-bar__link'>
               <li className='nav-bar__item'>
-                Listings
+                My Listings
               </li>
             </Link>
           </ul>
