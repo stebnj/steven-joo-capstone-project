@@ -30,6 +30,20 @@
     &__image-container{
         display: flex;
 
+        @include desktop{
+            display: none;
+        }
+
+        &-desktop{
+            display: none;
+            @include desktop{
+                display: block;
+                width: 15%;
+                display: flex;
+                justify-content: flex-end;
+            }
+
+        }
     }
 
     &__error{
@@ -42,7 +56,8 @@
         width: 5vw;
 
         @include desktop{
-            width: 2vw;
+            width: 2.5vw;
+            padding-bottom: 0.65rem;
         }
     }
 
@@ -53,7 +68,9 @@
 
         
         @include desktop{
-            width: 2vw;
+            width: 2.5vw;
+            padding-bottom: 0.65rem;
+            margin-left: 1.25rem;
         }
     }
 
@@ -61,6 +78,11 @@
     &__form{
         display: flex;
         flex-direction: column;
+
+        @include desktop{
+            flex-direction: row;
+            justify-content: space-between;
+        }
     }
 
     &__input{
@@ -68,6 +90,11 @@
         background-repeat: no-repeat;
         background-position: 95%;
         margin-bottom: 0.75rem;
+
+        @include desktop{
+            width: 95%;
+            background-position: 98%;
+        }
         
     }
 
@@ -87,6 +114,12 @@
 
     &__save{
         width:5vw;
+    }
+
+    &__button{
+        @include desktop{
+            display:none;
+        }
     }
 
 }

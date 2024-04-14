@@ -39,7 +39,7 @@ export default function ListingsList() {
         name: listing.name,
         rent_range: listing.rent_range,
         bed_range: listing.bed_range,
-        id: listing.id
+        id: listing.id,
       };
       await setDoc(doc(listingsCol), listingToSave);
       alert("Listing saved successfully");
@@ -153,7 +153,6 @@ export default function ListingsList() {
 
   const resetFilters = () => {
     setFilters({ minRent: null, maxRent: null, bedRange: "Any" });
-    
   };
 
   const handleSearch = (event) => {
@@ -194,6 +193,20 @@ export default function ListingsList() {
           onChange={(e) => setSchoolName(e.target.value)}
           placeholder="Enter a university"
         />
+        <div className="listings__image-container-desktop">
+          <img
+            src={filter}
+            className="listings__filter"
+            alt="filter image"
+            onClick={openModal}
+          />
+          <img
+            src={reset}
+            className="listings__reset"
+            onClick={resetFilters}
+            alt="reset image"
+          />
+        </div>
         <button className="listings__button" type="submit">
           Search
         </button>
