@@ -88,7 +88,7 @@ export default function ListingsList() {
             return listings.map(listing => ({ ...listing, color: undefined, matchQuality: undefined }));
         }
 
-        return listings.map(listing => {
+        const enhancedListings = listings.map(listing => {
             let score = 0;
     
             if (filters.minRent !== null && listing.rent_range >= filters.minRent) {
@@ -107,8 +107,11 @@ export default function ListingsList() {
             const color = score > 0 ? (score === maxScore ? 'green' : (score > 1 ? 'yellow' : 'red')) : 'red';
             const matchQuality = score > 0 ? (score === maxScore ? "High Match" : (score > 1 ? "Medium Match" : "Low Match")) : "";
     
-            return { ...listing, color, matchQuality };
+            return { ...listing, color, matchQuality, score };
         });
+        enhancedListings.sort((a, b) => b.score - a.score);
+
+        return enhancedListings;
     };
 
     const resetFilters = () => {
