@@ -11,15 +11,29 @@
     padding-bottom: 0.6rem;
     background-color: $green;
 
+    @include desktop{
+        flex-direction: row;
+        padding: 0.75rem 10vw 0 10vw;
+        width: 100%;
+    }
+
     &__heading-container{
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        @include desktop{
+        width: 10%;
+        }
     }
 
     &__heading{
         height: 7vh;
+
+        @include desktop{
+            height: 5vh;
+        }
 
     }
 
@@ -28,6 +42,10 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+
+        @include desktop{
+            width: 25%;
+        }
     }
 
     &__item{
@@ -38,6 +56,10 @@
         display: flex;
         width: 50%;
         justify-content: flex-end;
+
+        @include desktop{
+            width: 70%;
+        }
         
     }
 
@@ -54,6 +76,10 @@
 
    &__profile-img{
         width: 6vw;
+
+        @include desktop{
+            width: 2.5vw;
+        }
 
    }
 
@@ -74,6 +100,10 @@
         display: flex;
         width: 50%;
         padding-left: 0.5rem;
+
+        @include desktop{
+            width: 60%;
+        }
     }
 
     &__item{
