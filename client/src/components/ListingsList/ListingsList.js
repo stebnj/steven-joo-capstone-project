@@ -3,6 +3,7 @@ import FilterModal from "../FilterModal/FilterModal";
 import axios from "axios";
 import filter from "../../assets/icons/filter.svg";
 import reset from "../../assets/icons/reset.svg";
+import save from "../../assets/icons/save.svg";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import { db } from "../../firebase";
@@ -34,7 +35,12 @@ export default function ListingsList() {
     try {
       const userRef = doc(db, "users", currentUser.uid);
       const listingsCol = collection(userRef, "savedListings");
-      await setDoc(doc(listingsCol), listing);
+      const listingToSave = {
+        name: listing.name,
+        rent_range: listing.rent_range,
+        bed_range: listing.bed_range,
+      };
+      await setDoc(doc(listingsCol), listingToSave);
       alert("Listing saved successfully");
     } catch (error) {
       console.error("Error saving listing:", error);
@@ -125,7 +131,7 @@ export default function ListingsList() {
           ? score === maxScore
             ? "green"
             : score > 1
-            ? "yellow"
+            ? "rgb(197, 150, 47)"
             : "red"
           : "red";
       const matchQuality =
@@ -159,11 +165,17 @@ export default function ListingsList() {
       <div className="listings__heading-container">
         <h2 className="listings__heading">Listings</h2>
         <div className="listings__image-container">
-          <img src={filter} className="listings__filter" onClick={openModal} />
+          <img
+            src={filter}
+            className="listings__filter"
+            alt="filter image"
+            onClick={openModal}
+          />
           <img
             src={reset}
             className="listings__reset"
             onClick={resetFilters}
+            alt="reset image"
           />
         </div>
 
@@ -185,25 +197,26 @@ export default function ListingsList() {
           Search
         </button>
       </form>
-
-      <hr className="listings__divider"></hr>
       {loading && <p>Loading...</p>}
-      {error && <p className="error">{error}</p>}
+      {error && <p className="listings__error">{error}</p>}
+      <hr className="listings__divider"></hr>
+
       <ul className="listings__list">
         {listings.map((listing) => (
           <li className="listings__item" key={listing.id}>
             <Link
+              className="listings__item-name"
               to={`/listings/${listing.id}`}
               style={{ color: listing.color }}
             >
-              {listing.name} <span>({listing.matchQuality})</span>
+              {listing.name}{" "}
+              {listing.matchQuality && <span> ({listing.matchQuality})</span>}
             </Link>
-            <button
-              className="listings__button"
+            <img
+              className="listings__save"
+              src={save}
               onClick={() => saveListing(listing)}
-            >
-              Save
-            </button>
+            />
           </li>
         ))}
       </ul>

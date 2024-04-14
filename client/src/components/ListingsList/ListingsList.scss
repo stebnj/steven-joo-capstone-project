@@ -22,6 +22,10 @@
         display: flex;
 
     }
+
+    &__error{
+        color: $Red;
+    }
     
 
     &__filter{
@@ -53,6 +57,20 @@
         margin: 1rem 0;
     }
 
+    &__item{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 1rem;
+    }
+
+    &__item-name{
+        color: $dark-green;
+    }
+
+    &__save{
+        width:5vw;
+    }
+
 }
 
 
@@ -61,7 +79,7 @@
 }
 
 .yellow {
-    color: yellow;
+    color: rgb(197, 150, 47);
 }
 
 .red {
