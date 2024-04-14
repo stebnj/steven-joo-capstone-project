@@ -3,3 +3,32 @@
 @import '../../styles/partials/mixins';
 
 
+.details{
+    padding: 0 1rem;
+
+    &__heading-container{
+        display: flex;
+        align-items: center;
+    }
+
+    &__heading{
+        padding-top: 1rem;
+        padding-bottom: 0.5rem;
+        font-size: 1rem;
+    }
+
+    &__image{
+        width: 100%;
+        height: 80%;
+    }
+
+    &__back{
+        width: 5vw;
+        margin-right: 0.5rem;
+        padding-top: 0.8rem;
+    }
+}
+
+p{
+    padding-bottom: 0.75rem;
+}
