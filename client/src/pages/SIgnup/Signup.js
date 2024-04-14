@@ -72,7 +72,7 @@ export default function Signup() {
       </section>
       <section className="signup__redirect-container">
         <p className="signup__redirect">
-          Already have an account? <Link to="/login">Log in</Link>{" "}
+          Already have an account? <Link className="signup__link" to="/login">Log in</Link>{" "}
         </p>
       </section>
     </main>

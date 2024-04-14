@@ -47,12 +47,12 @@ export default function ForgotPassword() {
           </form>
         </section>
         <section className="password__redirect-login">
-          <Link to="/login">Login</Link>
+          <Link className="password__link" to="/login">Login</Link>
         </section>
       </section>
       <section className="password__redirect-signup">
         <p className="password__text">
-          Don't have an account?<Link to="/signup">Sign up</Link>{" "}
+          Don't have an account?<Link className="password__link" to="/signup">Sign up</Link>{" "}
         </p>
       </section>
     </main>
