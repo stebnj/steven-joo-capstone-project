@@ -47,6 +47,9 @@ export default function Login() {
             Log In
           </button>
         </form>
+        <section className="login__forgot-container-desktop">
+            <Link className="login__link" to="/forgot-password">Forgot Password?</Link>
+        </section>
       </section>
       <section className="login__redirect">
         <section className="login__forgot-container">
