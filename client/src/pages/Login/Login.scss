@@ -24,4 +24,14 @@
     &__input{
         border-radius: 0.5rem;
     }
+
+    &__redirect{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__signup-container{
+        padding-top: 0.5rem;
+    }
 }

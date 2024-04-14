@@ -48,13 +48,15 @@ export default function Login() {
           </button>
         </form>
       </section>
-      <section className="login__signup-container">
-        <p className="login__signup">
-          Don't have an account?<Link to="/signup"> Sign up</Link>{" "}
-        </p>
-      </section>
-      <section className="login__forgot-container">
-        <Link to="/forgot-password">Forgot Password?</Link>
+      <section className="login__redirect">
+        <section className="login__forgot-container">
+            <Link to="/forgot-password">Forgot Password?</Link>
+        </section>
+        <section className="login__signup-container">
+            <p className="login__signup">
+            Don't have an account?<Link to="/signup"> Sign up</Link>{" "}
+            </p>
+        </section>
       </section>
     </main>
   );
