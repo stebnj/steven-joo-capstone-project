@@ -102,10 +102,29 @@
         margin: 1rem 0;
     }
 
+    &__list{
+        @include desktop{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            
+        }
+    }
+
     &__item{
         display: flex;
         justify-content: space-between;
         padding-bottom: 1rem;
+
+        @include desktop{
+            justify-content: normal;
+            align-items: center;
+            margin: 1rem;
+            border: 1px solid $Slate;
+            border-radius: 0.5rem;
+            width: 15%;
+            padding: 1rem;
+        }
     }
 
     &__item-name{
@@ -114,6 +133,11 @@
 
     &__save{
         width:5vw;
+
+        @include desktop{
+            width: 2vw;
+            margin-left: 0.5rem;
+        }
     }
 
     &__button{
