@@ -3,7 +3,7 @@ import { useAuth } from '../../contexts/AuthContext'
 import { Link } from 'react-router-dom'
 import { db } from '../../firebase'
 import { collection, doc, getDocs, deleteDoc } from 'firebase/firestore'
-
+import './Dashboard.scss'
 
 export default function Dashboard() {
 const [error, setError] = useState('')
