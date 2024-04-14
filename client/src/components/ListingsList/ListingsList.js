@@ -155,17 +155,18 @@ export default function ListingsList() {
 
 
   return (
-    <div>
-        <form onSubmit={handleSearch}>
+    <div className='listings'>
+        <form className='listings__form' onSubmit={handleSearch}>
             <input
+                className='listings__input'
                 type="text"
                 value={schoolName}
                 onChange={(e) => setSchoolName(e.target.value)}
                 placeholder="Enter a university"
             />
-            <button type="submit">Search</button>
+            <button className='listings__button' type="submit">Search</button>
         </form> 
-        <button onClick={openModal}>
+        <button className='listings__button' onClick={openModal}>
             Filter
         </button>
         <FilterModal
@@ -177,13 +178,13 @@ export default function ListingsList() {
         {loading && <p>Loading...</p>}
         {error && <p className="error">{error}</p>}
       
-        <ul>
+        <ul className='listings__list'>
             {listings.map((listing) => (
-                <li key={listing.id}>
+                <li className='listings__item' key={listing.id}>
                     <Link to={`/listings/${listing.id}`}>
                         {listing.name}
                     </Link>
-                    <button onClick={() => saveListing(listing)}>Save</button>
+                    <button className='listings__button' onClick={() => saveListing(listing)}>Save</button>
                 </li>
                 
             ))}
