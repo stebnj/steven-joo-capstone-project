@@ -72,6 +72,18 @@
     display: flex;
     padding-top: 0.25rem;
     
+    @include desktop{
+        display: none;
+    }
+   }
+
+   &__profile-desktop{
+    display: none;
+
+    @include desktop{
+        display: block;
+        padding-left: 0.55rem;
+    }
    }
 
    &__profile-img{

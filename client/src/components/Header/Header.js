@@ -39,6 +39,13 @@ export default function Header() {
                 </button>
               </Link>  
             </div>
+            <div className='nav-bar__profile-desktop'>
+            <Link to="/dashboard">  
+              <img
+                className='nav-bar__profile-img'
+                src={profile} />
+            </Link>
+          </div>
           </section>
         </section>
 

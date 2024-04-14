@@ -7,6 +7,10 @@
     padding: 0 1rem 0 1rem;
     background-color: $Light-Grey;
 
+    @include desktop{
+        padding: 0 10vw 0 10vw;
+    }
+
     &__heading-container{
         display: flex;
         flex-direction: row;
@@ -17,6 +21,10 @@
 
     &__heading{
         color: $darker-green;
+
+        @include desktop{
+            font-size: 2rem;
+        }
     }
 
     &__image-container{
@@ -32,12 +40,21 @@
     &__filter{
         margin-right: 0.5rem;
         width: 5vw;
+
+        @include desktop{
+            width: 2vw;
+        }
     }
 
     &__reset{
         width: 5vw;
         margin-left: 0.5rem;
         margin-right: 0.5rem;
+
+        
+        @include desktop{
+            width: 2vw;
+        }
     }
 
 
