@@ -31,7 +31,7 @@ export default function Login() {
     <main className="login">
       <section className="login__heading-container">
         <h2 className="login__heading">Log In</h2>
-        {error}
+        <p className="login__error">{error}</p>
       </section>
       <section className="login__actions">
         <form className="login__form" onSubmit={handleSubmit}>

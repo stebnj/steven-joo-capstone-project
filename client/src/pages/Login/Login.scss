@@ -9,6 +9,8 @@
         padding: 1rem;
         display: flex;
         justify-content: center;
+        flex-direction: column;
+        align-items: center;
     }
 
     &__content{
@@ -41,5 +43,9 @@
 
     &__link{
         color: $light-green;
+    }
+
+    &__error{
+        color: $Red;
     }
 }
