@@ -2,7 +2,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Header from './components/Header/Header';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
-import Signup from './pages/SIgnup/Signup';
+import Signup from './pages/Signup/Signup';
 import Dashboard from './pages/Dashboard/Dashboard';
 import UpdateProfile from './pages/UpdateProfile/UpdateProfile';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';

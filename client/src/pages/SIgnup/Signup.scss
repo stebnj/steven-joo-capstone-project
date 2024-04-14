@@ -1,0 +1,35 @@
+@use '../../styles/partials/global';
+@import '../../styles/partials/variables';
+@import '../../styles/partials/mixins';
+
+
+.signup{
+    padding: 0 1rem;
+
+    &__heading-container{
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__action{
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 1.25rem;
+    }
+
+    &__label{
+        padding-bottom: 0.25rem;
+    }
+
+    &__input{
+        border-radius: 0.5rem;
+    }
+
+    &__redirect-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 0.5rem;
+    }
+}
