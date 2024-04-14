@@ -45,7 +45,7 @@ export default function FilterModal ({ isOpen, onClose, onApplyFilters }) {
                     </div>
                     <div className='modal__button-container'>
                         <button className='modal__button modal__cancel'  type="submit" onClick={onClose}>Cancel</button>
-                        <button className='modal__button' type="submit">Apply Filters</button>
+                        <button className='modal__button modal__apply' type="submit">Apply Filters</button>
                     </div>
                         
                 </form>

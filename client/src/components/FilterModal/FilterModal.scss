@@ -3,7 +3,7 @@
 @import '../../styles/partials/mixins';
 
 .modal{
-     width: 100%;
+        width: 100%;
         height: 100%;
         position: fixed;
         top: 0;
@@ -13,6 +13,12 @@
         
         z-index: 1;
 
+        @include desktop{
+            background-color: $BlackBg;
+            z-index: 1;
+            height: 100%;
+        }
+
     &__overlay{
         height: 100%;
         position: relative;
@@ -21,12 +27,22 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
+        @include desktop {
+            width: 55vw;
+            height: 35.25vh;
+            margin-top: 5.75rem;
+        }
     }
 
     &__heading-container{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+
+        @include desktop{
+            padding-bottom: 1rem;
+        }
     }
 
     &__image{
@@ -41,6 +57,10 @@
         display: flex;
         padding: 25.25rem 0 1rem 0;
         gap: 1rem;
+
+        @include desktop{
+            padding: 1rem 0;
+        }
     }
 
     &__input{
@@ -71,6 +91,12 @@
             background-color: $Light-Grey;
             color: $darker-green;
             border: 1px solid $darker-green;
+        }
+    }
+
+    &__apply{
+        @include desktop{
+            width: 12%;
         }
     }
 } 
