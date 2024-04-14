@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useRef } from "react";
 import { useAuth } from "../../contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
-import './Signup.scss'
+import "./Signup.scss";
 
 export default function Signup() {
   const emailRef = useRef();
@@ -40,15 +40,30 @@ export default function Signup() {
         <form className="signup__form" onSubmit={handleSubmit}>
           <div className="signup__action">
             <label className="signup__label">Email</label>
-            <input className="signup__input" type="email" ref={emailRef} required />
+            <input
+              className="signup__input"
+              type="email"
+              ref={emailRef}
+              required
+            />
           </div>
           <div className="signup__action">
             <label className="signup__label">Password</label>
-            <input className="signup__input" type="password" ref={passwordRef} required />
+            <input
+              className="signup__input"
+              type="password"
+              ref={passwordRef}
+              required
+            />
           </div>
           <div className="signup__action">
             <label className="signup__label">Confirm Password</label>
-            <input className="signup__input" type="password" ref={passwordConfirmRef} required />
+            <input
+              className="signup__input"
+              type="password"
+              ref={passwordConfirmRef}
+              required
+            />
           </div>
           <button className="signup__button" disabled={loading} type="submit">
             Sign Up
