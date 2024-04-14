@@ -76,7 +76,11 @@
     }
 
     &__item{
-        padding-right: 1rem;
+        margin-right: 1rem;
+
+        &:hover{
+            border-bottom: 1px solid white;
+        }
     }
 
 }
