@@ -6,12 +6,34 @@
 .signup{
     padding: 0 1rem;
 
+    @include desktop {
+        padding: 0 10vw;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
     &__heading-container{
         padding: 1rem;
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: center;
+    }
+
+    &__heading{
+        @include desktop{
+            font-size: 2rem;
+        }
+    }
+
+    &__action-container{
+        @include desktop{
+            width: 60%;
+            border: 1px solid $Cloud;
+            border-radius: 0.5rem;
+            padding: 1rem;
+        }
     }
 
     &__action{
