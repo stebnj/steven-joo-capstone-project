@@ -5,21 +5,78 @@
 
 .nav-bar{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     padding: 1rem;
+    background-color: $green;
 
-    &__lists{
+    &__heading-container{
+        width: 100%;
         display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__heading{
+        height: 7vh;
+
+    }
+
+    &__lists-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
 
     &__item{
-        padding-right: 1rem;
+        color: $White;
     }
 
     &__right-container{
         display: flex;
-        flex-direction: row;
+        width: 50%;
+        justify-content: flex-end;
+        
+    }
+
+   &__button-container{
+        width: 70%;
+
+   }
+
+   &__profile{
+    display: flex;
+    padding-top: 0.25rem;
+    
+   }
+
+   &__profile-img{
+        width: 6vw;
+
+   }
+
+   &__button{
+    display: block;
+    border: none;
+    border-radius: 1.25rem;
+    background-color: $dark-green;
+    color: white;
+    text-transform: capitalize;
+    padding: 0;
+    margin: 0;
+    height: 2rem;
+    width: 100%;
+   }
+
+    &__lists{
+        display: flex;
+        width: 50%;
+        padding-left: 0.5rem;
+    }
+
+    &__item{
+        padding-right: 1rem;
     }
 
 }
