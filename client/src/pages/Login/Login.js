@@ -50,11 +50,11 @@ export default function Login() {
       </section>
       <section className="login__redirect">
         <section className="login__forgot-container">
-            <Link to="/forgot-password">Forgot Password?</Link>
+            <Link className="login__link" to="/forgot-password">Forgot Password?</Link>
         </section>
         <section className="login__signup-container">
             <p className="login__signup">
-            Don't have an account?<Link to="/signup"> Sign up</Link>{" "}
+            Don't have an account?<Link className="login__link" to="/signup"> Sign up</Link>{" "}
             </p>
         </section>
       </section>
