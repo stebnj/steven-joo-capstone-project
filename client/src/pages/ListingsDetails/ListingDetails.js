@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import {useParams} from 'react-router-dom'
 import axios from 'axios'
+import './ListingDetails.scss'
 
 export default function ListingDetails() {
     const {id} = useParams();
@@ -28,7 +29,7 @@ export default function ListingDetails() {
     }, [id])
 
   return (
-    <div>
+    <section>
         <h1>
             Listing Details
         </h1>
@@ -37,13 +38,13 @@ export default function ListingDetails() {
         {listing ? (
             <div>
                 <h2>{listing.name}</h2>
-                <p>Bedrooms: {listing.bed_range || 'N/A'}</p>
-                <p>Rent: ${listing.rent_range}</p>
-                <p>Address: {listing.address.full_address}</p>
+                <p> <strong>Bedrooms</strong>: {listing.bed_range || 'N/A'}</p>
+                <p><strong>Rent</strong>: ${listing.rent_range}</p>
+                <p><strong>Address</strong>: {listing.address.full_address}</p>
             </div>
         ) : (
             !error && <p>Loading...</p>
         )}
-    </div>
+    </section>
   )
 }
