@@ -5,7 +5,54 @@
 
 .listings{
     padding: 0 1rem 0 1rem;
+
+    &__heading-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 1rem;
+        padding-bottom: 0.5rem;
+    }
+
+    &__heading{
+        color: $darker-green;
+    }
+
+    &__image-container{
+        display: flex;
+
+    }
     
+
+    &__filter{
+        margin-right: 0.5rem;
+        width: 5vw;
+    }
+
+    &__reset{
+        width: 5vw;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+
+
+    &__form{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__input{
+        background-image: url(../../assets/icons/search-24px.svg);
+        background-repeat: no-repeat;
+        background-position: 95%;
+        margin-bottom: 0.75rem;
+        
+    }
+
+    &__divider{
+        margin: 1rem 0;
+    }
+
 }
 
 

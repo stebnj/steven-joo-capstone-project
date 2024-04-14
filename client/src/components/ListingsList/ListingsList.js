@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import FilterModal from "../FilterModal/FilterModal";
 import axios from "axios";
+import filter from "../../assets/icons/filter.svg";
+import reset from "../../assets/icons/reset.svg";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import { db } from "../../firebase";
@@ -154,6 +156,23 @@ export default function ListingsList() {
 
   return (
     <div className="listings">
+      <div className="listings__heading-container">
+        <h2 className="listings__heading">Listings</h2>
+        <div className="listings__image-container">
+          <img src={filter} className="listings__filter" onClick={openModal} />
+          <img
+            src={reset}
+            className="listings__reset"
+            onClick={resetFilters}
+          />
+        </div>
+
+        <FilterModal
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          onApplyFilters={handleApplyFilters}
+        />
+      </div>
       <form className="listings__form" onSubmit={handleSearch}>
         <input
           className="listings__input"
@@ -166,14 +185,8 @@ export default function ListingsList() {
           Search
         </button>
       </form>
-      <button className="listings__button" onClick={openModal}>
-        Filter
-      </button>
-      <FilterModal
-        isOpen={isModalOpen}
-        onClose={closeModal}
-        onApplyFilters={handleApplyFilters}
-      />
+
+      <hr className="listings__divider"></hr>
       {loading && <p>Loading...</p>}
       {error && <p className="error">{error}</p>}
       <ul className="listings__list">
@@ -185,13 +198,15 @@ export default function ListingsList() {
             >
               {listing.name} <span>({listing.matchQuality})</span>
             </Link>
-            <button className='listings__button' onClick={() => saveListing(listing)}>Save</button>
+            <button
+              className="listings__button"
+              onClick={() => saveListing(listing)}
+            >
+              Save
+            </button>
           </li>
         ))}
       </ul>
-      <button className="listings__button" onClick={resetFilters}>
-        Reset Filters
-      </button>
     </div>
   );
 }
