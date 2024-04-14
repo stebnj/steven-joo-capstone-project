@@ -31,7 +31,7 @@ export default function ForgotPassword() {
     <main className="password">
       <section className="password__heading-container">
         <h2 className="password__heading">Password Reset</h2>
-        {error}
+        <p className="password__error">{error}</p>
         <section className="password__message">{message}</section>
       </section>
       <section className="password__body">

@@ -48,7 +48,7 @@ export default function UpdateProfile() {
     <main className="update">
       <section className="update__heading-container">
         <h2 className="update__heading">Update Profile</h2>
-        {error}
+        <p className="update__error">{error}</p>
       </section>
       <section className="update__action-container">
         <form className="update__form" onSubmit={handleSubmit}>

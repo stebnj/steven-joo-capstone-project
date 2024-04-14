@@ -34,7 +34,7 @@ export default function Signup() {
     <main className="signup">
       <section className="signup__heading-container">
         <h2 className="signup__heading">SIGN UP</h2>
-        {error}
+        <p className="signup__error">{error}</p>
       </section>
       <section className="signup__action-container">
         <form className="signup__form" onSubmit={handleSubmit}>
