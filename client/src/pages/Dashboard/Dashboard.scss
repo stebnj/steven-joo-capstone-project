@@ -1,3 +1,34 @@
 @use '../../styles/partials/global';
 @import '../../styles/partials/variables';
 @import '../../styles/partials/mixins';
+
+
+.dashboard {
+    padding: 0 1rem;
+
+    &__heading-container{
+        padding: 1rem 0 0.75rem 0;
+
+    }
+
+    &__divider{
+        margin: 1rem 0;
+    }
+
+    &__image{
+        width: 5vw;
+        margin-right: 0.5rem;
+    }
+
+    &__item{
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 0;
+    }
+
+    &__button-container{
+        margin-top: 1rem;
+    }
+
+
+}

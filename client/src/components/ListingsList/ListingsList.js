@@ -39,6 +39,7 @@ export default function ListingsList() {
         name: listing.name,
         rent_range: listing.rent_range,
         bed_range: listing.bed_range,
+        id: listing.id
       };
       await setDoc(doc(listingsCol), listingToSave);
       alert("Listing saved successfully");
