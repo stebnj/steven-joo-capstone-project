@@ -27,4 +27,9 @@ button{
     margin: 0;
     height: 2rem;
     width: 100%;
+
+    &:hover{
+        background-color: $darker-green;
+        transition: all ease-in-out 0.2s;
+    }
    }
