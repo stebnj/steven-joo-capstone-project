@@ -99,9 +99,11 @@ export default function Dashboard() {
             <strong>Email: </strong>
             {currentUser.email}
           </p>
-          <Link className="dashboard__link" to="/update-profile">
-            <button className="dashboard__button">Update Profile</button>
-          </Link>
+          <div className="dashboard__button-container-top">
+            <Link className="dashboard__link" to="/update-profile">
+              <button className="dashboard__button">Update Profile</button>
+            </Link>
+          </div>
         </section>
         <hr className="dashboard__divider"></hr>
         <section className="dashboard__saved">
@@ -129,7 +131,7 @@ export default function Dashboard() {
           )}
         </section>
         <section className="dashboard__button-container">
-          <button className="dashboard__button" onClick={handleLogout}>
+          <button className="dashboard__button-bottom" onClick={handleLogout}>
             Log Out
           </button>
         </section>

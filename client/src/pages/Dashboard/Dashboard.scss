@@ -6,31 +6,88 @@
 .dashboard {
     padding: 0 1rem;
 
-    &__heading-container{
+    @include desktop {
+        padding: 0 10vw 0 10vw;
+    }
+
+    &__heading-container {
         padding: 1rem 0 0.75rem 0;
 
     }
 
-    &__divider{
-        margin: 1rem 0;
+    &__heading {
+        @include desktop {
+            font-size: 2rem;
+        }
     }
 
-    &__image{
+    &__saved-heading {
+        @include desktop {
+            font-size: 1.5rem;
+        }
+    }
+
+    &__divider {
+        margin: 1rem 0;
+        
+    }
+
+    &__image {
         width: 5vw;
         margin-right: 0.5rem;
+
+        @include desktop{
+            width: 2vw;
+        }
     }
 
-    &__item{
+    &__item {
         display: flex;
         justify-content: space-between;
         padding: 0.5rem 0;
+
+        @include desktop{
+            border-bottom: 1px solid $Cloud;
+            margin: 1rem 0;
+        }
     }
 
-    &__button-container{
+    &__button-container {
         margin-top: 1rem;
+        display: flex;
+        justify-content: flex-end;
+
+        @include desktop {
+            width: 13%;
+            float: right;
+        }
+
     }
 
-    &__listing-link{
+    &__button-bottom{
+        @include desktop{
+            width: 13%;
+        }
+    }
+
+    &__button-container-top {
+        @include desktop {
+
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+
+    &__link {
+        @include desktop {
+            width: 13%;
+        }
+
+    }
+
+
+
+    &__listing-link {
         color: $Black;
     }
 
