@@ -52,7 +52,7 @@ export default function ForgotPassword() {
       </section>
       <section className="password__redirect-signup">
         <p className="password__text">
-          Don't have an account?<Link className="password__link" to="/signup">Sign up</Link>{" "}
+          Don't have an account?<Link className="password__link" to="/signup"> Sign up</Link>{" "}
         </p>
       </section>
     </main>
