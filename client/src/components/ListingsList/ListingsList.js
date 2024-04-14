@@ -153,7 +153,7 @@ export default function ListingsList() {
 
   const resetFilters = () => {
     setFilters({ minRent: null, maxRent: null, bedRange: "Any" });
-    getListings();
+    
   };
 
   const handleSearch = (event) => {
