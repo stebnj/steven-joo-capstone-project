@@ -43,7 +43,6 @@ app.get('/listings/near-harvard', async (req, res) => {
 
 app.get(`/listings/near-harvard`, async (req, res) => {
     const { minRent, maxRent, bedRange } = req.query;
-    console.log('Received filters:', { minRent, maxRent, bedRange });
 
     try {
         let query = knex('nest_tables');

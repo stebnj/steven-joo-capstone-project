@@ -37,9 +37,6 @@ export default function Dashboard() {
             };
           });
 
-
-        console.log(listings);
-
         setSavedListings(listings);
       } catch (err) {
         console.error("Error fetching saved listings:", err);
@@ -51,7 +48,7 @@ export default function Dashboard() {
   }, [currentUser]);
 
   const removeListing = async (listingId) => {
-    console.log(listingId);
+    
 
     if (!currentUser) {
       alert("You must be logged in to remove listings.");
@@ -70,7 +67,7 @@ export default function Dashboard() {
       setSavedListings(
         savedListings.filter((listing) => listing.docId !== listingId)
       );
-      console.log(savedListings);
+      
       alert("Listing removed successfully!");
     } catch (error) {
       console.error("Error removing listing:", error);

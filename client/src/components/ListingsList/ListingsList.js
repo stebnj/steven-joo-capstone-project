@@ -84,7 +84,7 @@ export default function ListingsList() {
   }, []);
 
   const applyColorCoding = () => {
-    if (!filters || Object.keys(filters).length === 0) return; // Skip if no filters are set
+    if (!filters || Object.keys(filters).length === 0) return; 
     const coloredListings = colorCodeListings(listings, filters);
     setListings(coloredListings);
   };
@@ -100,7 +100,7 @@ export default function ListingsList() {
         filters.maxRent === null &&
         filters.bedRange === "Any")
     ) {
-      // Return listings without adding color or matchQuality if no filters are applied
+      
       return listings.map((listing) => ({
         ...listing,
         color: undefined,

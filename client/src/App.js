@@ -30,6 +30,7 @@ function App() {
           <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>}></Route>
         </Routes>
         {/* <Footer /> */}
+        {/* going to keep just in case */}
       </BrowserRouter>  
     </AuthProvider>
     
