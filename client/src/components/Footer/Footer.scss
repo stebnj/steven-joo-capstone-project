@@ -5,15 +5,14 @@
 
 .footer{
     background-color: $Light-Grey;
-    position: absolute;
     width: 100%;
     bottom: 0;
+    position: absolute;
 
     &__container{
     border-top: 1px solid $Cloud;
-    display: flex;
-    justify-content: center;
     padding-top: 1rem;
+    text-align: center;
 
     @include desktop{
         padding: 2rem 0 1.25rem 0;
