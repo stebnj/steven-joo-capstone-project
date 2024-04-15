@@ -232,8 +232,10 @@ export default function ListingsList() {
               onClick={() => saveListing(listing)}
             />
           </li>
+          
         ))}
       </ul>
+     
     </div>
   );
 }
