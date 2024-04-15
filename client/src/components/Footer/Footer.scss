@@ -1,0 +1,19 @@
+@use '../../styles/partials/global';
+@import '../../styles/partials/variables';
+@import '../../styles/partials/mixins';
+
+
+.footer{
+    background-color: $Light-Grey;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+
+    &__container{
+    border-top: 1px solid $Cloud;
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+    
+    }
+}

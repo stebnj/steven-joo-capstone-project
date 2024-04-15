@@ -9,6 +9,7 @@
 
 body{
      @include font-styling(400, $darker-green);
+     background-color: $Light-Grey;
 }
 
 
