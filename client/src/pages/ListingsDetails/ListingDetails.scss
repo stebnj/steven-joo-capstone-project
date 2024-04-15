@@ -3,32 +3,73 @@
 @import '../../styles/partials/mixins';
 
 
-.details{
+.details {
     padding: 0 1rem;
 
-    &__heading-container{
+    @include desktop {
+        padding: 0 10vw;
+    }
+
+    &__heading-container {
         display: flex;
         align-items: center;
     }
 
-    &__heading{
+    &__heading {
         padding-top: 1rem;
         padding-bottom: 0.5rem;
         font-size: 1rem;
+
+        @include desktop {
+            font-size: 1.5rem;
+        }
+
     }
 
-    &__image{
+    &__name {
+        @include desktop {
+            font-size: 2rem;
+        }
+    }
+
+    &__image {
         width: 100%;
-        height: 80%;
+        height: 40vh;
+        padding: 1rem 0;
+
+        @include desktop {
+            height: 50h;
+            width: 40%;
+        }
     }
 
-    &__back{
+    &__info {
+        @include desktop {
+            display: flex;
+        }
+
+    }
+
+    &__text {
+        @include desktop {
+            display: flex;
+            flex-direction: column;
+            padding: 0.7rem 1.5rem;
+        }
+    }
+
+    &__back {
         width: 5vw;
         margin-right: 0.5rem;
         padding-top: 0.8rem;
+
+        @include desktop {
+            padding-top: 1rem;
+            width: 2.5vw;
+        }
     }
 }
 
-p{
+p {
     padding-bottom: 0.75rem;
 }

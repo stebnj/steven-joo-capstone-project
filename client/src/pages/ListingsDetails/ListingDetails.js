@@ -46,16 +46,20 @@ export default function ListingDetails() {
       {listing ? (
         <div className="details__content">
           <h1 className="details__name">{listing.name}</h1>
-          <img src={house} className="details__image" alt="house image" />
-          <p className="details__bed">
-            <strong>Bedrooms</strong>: {listing.bed_range || "N/A"}
-          </p>
-          <p className="details__price">
-            <strong>Rent</strong>: ${listing.rent_range}
-          </p>
-          <p className="details__address">
-            <strong>Address</strong>: {listing.address.full_address}
-          </p>
+          <div className="details__info">
+            <img src={house} className="details__image" alt="house image" />
+            <section className="details__text">
+              <p className="details__bed">
+                <strong>Bedrooms</strong>: {listing.bed_range || "N/A"}
+              </p>
+              <p className="details__price">
+                <strong>Rent</strong>: ${listing.rent_range}
+              </p>
+              <p className="details__address">
+                <strong>Address</strong>: {listing.address.full_address}
+              </p>
+            </section>
+          </div>
         </div>
       ) : (
         !error && <p>Loading...</p>
